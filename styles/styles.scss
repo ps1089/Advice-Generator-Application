@@ -1,0 +1,97 @@
+@use './utilities' as *;
+
+*
+{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body
+{
+ width: 100%;
+ height: 100%;
+}
+
+body
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-bg-color;
+    font-family: 'Manrope', sans-serif;
+}
+
+#container
+{
+    position: relative;
+    max-width: pxToRem(500px);
+    background-color: $sec-bg-color;
+    padding: 3rem 3rem 4rem 3rem;
+    border-radius: pxToRem(15px);
+}
+
+#content
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : pxToRem(30px);
+
+    p 
+    {
+        color : $sec-txt-color;
+        text-transform: uppercase;
+        font-size: pxToRem(14px);
+        letter-spacing: pxToRem(2px);
+    }
+    
+    h1
+    {
+        color : $primary-txt-color;
+        text-align: center;
+        font-size: pxToRem(28px);
+    }
+    
+    img 
+    {
+        width: 90%;
+        height: pxToRem(13.094px);
+    }
+
+
+}
+
+button 
+{
+    position: absolute;
+    top : 92%;
+    left: 50%;
+    transform: translate(-50%,0);
+    background-color: $sec-txt-color;
+    padding : pxToRem(10px) pxToRem(10px) pxToRem(8px) pxToRem(10px);
+    border-radius: 50%;
+    border: none;
+    transition: all 0.5s linear;
+
+    &:hover 
+    {
+        cursor: pointer;
+        box-shadow: 0px 0px 8px 6.5px $sec-txt-color;
+    }
+}
+
+@media screen and (max-width : 600px) 
+{
+    #container
+    {
+        width: 95% ;
+        padding : 1.5rem 1.5rem 3rem 1.5rem;
+    }
+
+    #content h1
+    {
+        font-size: pxToRem(24px);
+    }
+
+} 
